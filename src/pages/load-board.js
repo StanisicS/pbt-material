@@ -15,22 +15,31 @@ import { Grid, Divider, Container, Box } from "@material-ui/core"
 import EventList, { GenerateTags } from "../components/event-list"
 
 function EventsPage(props) {
-  const projects = props.data.allGoogleSheetProjectsRow.nodes
+  // const projects = props.data.allGoogleSheetProjectsRow.nodes
   const img = props.data.cover.childImageSharp.fixed.src
   return (
     <Layout>
       <DividedSection
         black
         image={img}
-        height="40vh"
+        height="100vh"
         backgroundBlendMode="overlay"
         backgroundColor="#333333"
       >
-        <Title variant="h2" align="center">
-          Kabis Projects
-        </Title>
+        {/* <Title variant="h2" align="center">
+          Find Available Loads
+        </Title> */}
+        <Container maxWidth="md">
+          <Box justifyContent="flex-end" mr={8}>
+            <iframe
+              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmwx_IJJmQIYzzMO30v6Cs9XAST4hOOrCzsprcx6d0oV6mIZm4XSUn5JDJ2iXvLQQucKoQ5fMqdAw4/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+              width="1070"
+              height="300"
+            />
+          </Box>
+        </Container>
       </DividedSection>
-      <Container maxWidth="md">
+      {/* <Container maxWidth="md">
         {projects.map(e => (
           <React.Fragment>
             <Box mb={4} mt={4}>
@@ -77,28 +86,14 @@ function EventsPage(props) {
             <Divider />
           </React.Fragment>
         ))}
-      </Container>
+      </Container> */}
     </Layout>
   )
 }
 
 export const ItemPageQuery = graphql`
   query Projects {
-    allGoogleSheetProjectsRow {
-      nodes {
-        id
-        coverUrl
-        description
-        category
-        projecttitle
-        nameofprojectlead
-        involvedorganizations
-        tags
-        startdate
-        enddate
-      }
-    }
-    cover: file(relativePath: { eq: "cover.jpg" }) {
+    cover: file(relativePath: { eq: "load-main.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

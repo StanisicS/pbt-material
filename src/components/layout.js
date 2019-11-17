@@ -20,7 +20,7 @@ const useSiteMetadata = () => {
             description
           }
         }
-        file(relativePath: { eq: "kabislogo_white.png" }) {
+        file(relativePath: { eq: "pbt-logoL-Standard@2x.png" }) {
           childImageSharp {
             # Specify the image processing specifications right in the query.
             # Makes it trivial to update as your page's design changes.
@@ -83,15 +83,17 @@ const TemplateWrapper = ({ children }) => {
           <HeaderLinks
             links={[
               { link: "/", text: "Home" },
-              { link: "/projects", text: "Projects" },
-              { link: "/about", text: "ABout" },
+              { link: "/load-board", text: "Load Board" },
+              { link: "/support", text: "Support" },
+              { link: "/about", text: "About" },
+              { link: "/SignIn", text: "Log In" },
             ]}
           />
         }
       />
       <div style={{ minHeight: "100%" }}>{children}</div>
       <DividedSection black height="10vh" justifySelf="flex-end">
-        <Title align="right">KABIS 2019</Title>
+        <Title align="right">Palm Beach Transport LLC</Title>
       </DividedSection>
     </div>
   )
