@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import {
   DividedSection,
   Title,
@@ -10,14 +10,16 @@ import {
 import { Container, Box } from "@material-ui/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import BackgroundSection from "../components/BackgroundSection"
 
 function IndexPage(props) {
-  const img = props.data.cover.childImageSharp.fixed.src
+  // const img = props.data.cover.childImageSharp.fixed.src
 
   return (
     <Layout>
       <SEO title="Home" />
-      <DividedSection
+      <BackgroundSection />
+      {/* <DividedSection
         black
         image={img}
         height="100vh"
@@ -27,8 +29,8 @@ function IndexPage(props) {
         backgroundAttachment="fixed"
         backgroundBlendMode="overlay"
         backgroundColor="#333333"
-      >
-        <Container maxWidth="sm" align="center">
+      > */}
+        {/* <Container maxWidth="sm" align="center">
           <Title variant="h3" align="center">
             PALM BEACH TRANSPORT LLC
           </Title>
@@ -41,7 +43,7 @@ function IndexPage(props) {
             </Button>
           </Box>
         </Container>
-      </DividedSection>
+      </DividedSection> */}
       {/* <DividedSection>
         {props.data.partners &&
           props.data.partners.nodes.map(company => (
@@ -49,7 +51,7 @@ function IndexPage(props) {
           ))}
       </DividedSection> */}
       <DividedSection height="80vh">
-        <Img fluid={props.data.kickoff.childImageSharp.fluid} />
+        {/* <Img fluid={props.data.kickoff.childImageSharp.fluid} /> */}
         <Container>
           <Title variant="h4" align="left">
             Lorem Ipsum
