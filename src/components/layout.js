@@ -15,7 +15,7 @@ const useSiteMetadata = () => {
 						description
 					}
 				}
-				file(relativePath: { eq: "pbt-logoL-Standard.png" }) {
+				file(relativePath: { eq: "pbt-logoL-Standard@2x.png" }) {
 					childImageSharp {
 						# Specify the image processing specifications right in the query.
 						# Makes it trivial to update as your page's design changes.
@@ -33,7 +33,7 @@ const useSiteMetadata = () => {
 const TemplateWrapper = ({ children }) => {
 	const { site, file } = useSiteMetadata()
 	return (
-		<div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+		<div style={{ display: "flex", flexDirection: "column" }}>
 			<Helmet>
 				<html lang='en' />
 				<title>{site.siteMetadata.title}</title>
